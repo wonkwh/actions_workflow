@@ -1,0 +1,12 @@
+on:
+  slack:
+jobs:
+  print:
+    name: Print
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print Outputs
+        env:
+          slack_text: ${{ on.slack.outputs.text }}
+        run: |
+          echo slack text: $slack_text
